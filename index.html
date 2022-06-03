@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/0458944bda.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Acuario Flipper</title>
+  <style>
+    @keyframes scroll {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+    }
+
+    /* ABAJO HACIA ARRIBA */
+    .scrollup {
+      border-radius: 50%;
+      font-size: 20px;
+      color: #fff;
+      background-color: #2196F3;
+      border: 1px solid #A2A2A2;
+      text-align: center;
+      padding: 6px;
+      width: 40px;
+      height: 40px;
+      position: fixed;
+      bottom: 50px;
+      right: 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="home">
+    <div class="row">
+      <div style="padding-top: 2%">
+
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html" style="color: white;">Menú</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#home" style="color: white;">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#productos" style="color: white;">Productos</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a style="color: white;" class="nav-link dropdown-toggle" href="#peces" id="navbarDropdown"
+                  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Peces
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#dulces">Dulces</a></li>
+                  <li><a class="dropdown-item" href="#salados">Salados</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#contacto" style="color: white;">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="registro.html" style="color: white;">Registro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#about" style="color: white;">Sobre nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#ubicacion" style="color: white;">Ubicacion</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div style="padding-top: 2%" id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/4.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/5.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/6.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/7.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/8.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/9.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/10.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+      <div id="peces">
+      </div>
+      <div id="dulces" class="card mb-6" style="max-width: 540px; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/2.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez tetra neón</h5>
+              <p class="card-text">El tetra pertenece a la familia Characidae y es uno de los peces más comunes que
+                están presentes en acuarios de agua dulce.
+                Nativo de Sudamérica, donde habita el río Amazonas, el tetra neón necesita temperaturas cálidas de agua,
+                entre 20 y 26 ºC.
+                Además, posee características fisiológicas que les permite adaptarse a aguas con altos niveles de hierro
+                y otros metales,
+                lo que para otras especies podría ser fatal. Esto, sumado a su colorido muy llamativo, su carácter
+                tranquilo y que puede
+                convivir en cardúmenes, lo vuelven un pez muy apreciado para la acuariofilia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/3.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez Carpa, pez dorado o goldfish</h5>
+              <p class="card-text">El goldfish es, sin duda, el pez para acuario más famoso, ya que fue una de las
+                primeras especies que el ser humano domesticó y que comenzó a utilizar para acuarios y estanques
+                privados. Esta especie se encuentra dentro de la familia Cyprinidae y es originaria del oriente de Asia.
+                La carpa dorada es de pequeño tamaño comparada con otras especies de carpas, mide aproximadamente 25 cm
+                y se adapta muy bien a diferentes condiciones ambientales. Sin embargo, su temperatura ideal en el agua
+                ronda los 20 ºC. Además, es una especie muy longeva, ya que puede llegar a vivir cerca de 30 años.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/4.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez cebra</h5>
+              <p class="card-text">Nativo del sudeste asiático, el pez cebra pertenece a la familia Cyprinidae y es
+                típico de ríos, lagos y lagunas. Su tamaño es muy pequeño, no supera los 5 cm, siendo las hembras algo
+                más grandes que los machos y menos alargadas. Posee un diseño con franjas azules longitudinales a los
+                lados de su cuerpo, de allí su nombre, y parece tener color plateado, pero es prácticamente
+                transparente. Son muy dóciles, viven en pequeños grupos y pueden convivir muy bien con otras especies
+                tranquilas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/5.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez ángel o escalar</h5>
+              <p class="card-text">Este El pez ángel es de la familia Cichlidae y es endémico de América del Sur. Es una
+                especie de mediano tamaño, pudiendo alcanzar 15 cm de largo. Posee una forma corporal muy estilizada.
+                Por ello, sumado a sus colores, es muy buscado por los amantes de la acuariofilia. De lado, su forma es
+                similar a un triángulo, con las aletas dorsal y anal muy largas, y tienen una gran variedad de colores,
+                pudiendo haber variedades grises o naranjas y con manchas oscuras.
+
+                Es una especie muy sociable, por lo que en general convive bien con otras peces de tamaño similar, pero
+                al tratarse de un pez omnívoro, podría llegar a consumir a otros peces de pequeño tamaño, como el pez
+                neón, por ejemplo, por lo que hay que evitar juntarlos con este tipo de especies. La temperatura ideal
+                para el acuario del pez ángel debe ser cálida, entre 24 a 28 ºC.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/6.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez guppy</h5>
+              <p class="card-text">También conocidos como lebistes, los peces guppy pertenecen a la familia Poeciliidae
+                y son originarios de Sudamérica. Son peces pequeños, miden cerca de 5 cm las hembras y los machos
+                aproximadamente 3 cm. Tienen gran dimorfismo sexual, es decir, que se diferencian machos y hembras,
+                presentando los primeros diseños muy coloridos en la aleta caudal, siendo más grande y con colores
+                azules, rojos, naranjas y muchas veces con manchas atigradas. Las hembras, por su parte, son de color
+                verdoso y solo presentan coloración naranja o rojo en la aleta dorsal y caudal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/7.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez Coridora punteada</h5>
+              <p class="card-text">Especie de la familia Callichthyidae y nativa de América del Sur, es uno de los peces
+                más vistos en peceras de agua dulce, ya que además de ser muy bonitos, cumplen un rol muy importante
+                dentro del acuario, sumado a que conviven perfectamente con otras especies. Esta especie es de tamaño
+                pequeño, mide cerca de 5 cm, aunque la hembra puede llegar a ser algo más grande.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/8.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez Molly negro</h5>
+              <p class="card-text">El molly pertenece a la familia Poeciliidae y es nativo de América Central y parte de
+                América del Sur. Posee dimorfismo sexual, ya que la hembra, además de ser más grande, pues mide
+                alrededor de 10 cm, es de color naranja, a diferencia del macho que mide cerca de 6 cm, es más
+                estilizado y es de color negro, de allí su nombre.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/9.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez betta</h5>
+              <p class="card-text">También conocido como luchador de Siam, el pez betta es una especie es de la familia
+                Osphronemidae y originaria del sudeste de Asia. Sin duda, es de las especies de peces de agua dulce más
+                llamativas y bonitas que los amantes de la acuariofilia eligen para sus acuarios. De tamaño mediano, su
+                longitud es de alrededor de 6 cm y posee una gran variedad de colores y formas de sus aletas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/10.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez platy</h5>
+              <p class="card-text">El platy es un pez de agua dulce de la familia Poeciliidae, nativo de Centroamérica.
+                Al igual que otros miembros de su familia, como es el caso de los mollys y los guppys, esta especie es
+                muy fácil de cuidar, por lo que también es un excelente compañero para otros peces de tu acuario.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/11.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez disco</h5>
+              <p class="card-text">De la familia Cichlidae, el pez disco es nativo de América del Sur. Aplanado
+                lateralmente y en forma de disco, puede alcanzar cerca de 17 cm. Su coloración puede variar entre
+                marrones, naranjas o amarillos a azules o tonos verdosos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/12.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez gurami o gurami perla</h5>
+              <p class="card-text">El gurami pertenece a la familia Osphronemidae y es nativo de Asia. Su cuerpo
+                aplanado lateralmente y alargado mide alrededor de 12 cm. Posee una coloración muy llamativa: su cuerpo
+                es plateado con tonos marrones y está cubierto por pequeños lunares similares a perlas, lo cual le ha
+                dado nombre a la especie, además de poseer una línea en forma de zigzag oscura que atraviesa
+                lateralmente su cuerpo desde el hocico hasta la aleta caudal.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/13.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez ramirezi</h5>
+              <p class="card-text">De la familia Cichlidae, el ramirezi es originario de América del Sur, más
+                concretamente de Colombia y Venezuela. Es pequeño, mide de 5 a 7 cm y en general es pacífico, pero se
+                recomienda que, si convive con una hembra, estén solos, puesto que puede ser muy territorial y agresivo
+                durante la época de cría. Sin embargo, si no están con una hembra, pueden convivir tranquilamente con
+                otras especies similares. De todas maneras, se recomienda que vivan en pareja, puesto que así lo hacen
+                en la naturaleza..</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/14.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Damiselas</h5>
+              <p class="card-text">Son peces de unos 7 cm de tamaño que son bastante solitarios y se adaptan muy bien a
+                distintos ambientes. Lo único a tener en cuenta es que pueden ser un poquito agresivas y territoriales
+                con otros peces, incluso de su misma especie, ¡así que asegúrate de que tengan suficiente espacio para
+                nadar sin que las molesten!.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="salados" class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/15.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez payaso</h5>
+              <p class="card-text">Este seguro que te suena, además de ser megafamoso por su nombre y colorido cuerpo,
+                ¡seguro que has visto la peli “Buscando a Nemo”! Si te acuerdas, ¡sabrás que Nemo vivía en un arrecife
+                de coral! Y es que estos peces siempre eligen estos lugares para vivir, ya que siempre están rodeados de
+                anémonas, las perfectas compañeras de higiene del pez payaso.
+
+                También se suelen adaptar bien a la vida en acuario, aunque es un poco más complejo aclimatarles el
+                agua. Eso sí, hay que tener en cuenta que son un poco especialitos a la hora de elegir vecinos: mientras
+                que con otras especies suelen llevarse bien, con otros peces payaso pueden ser un poco agresivos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/16.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez cirujano de sombra azul</h5>
+              <p class="card-text">A pesar de ser uno de los peces de agua salada más populares en acuarios, este no es
+                tan fácil de mantener y es más complejo para acuaristas novatos. En el medio natural, el pez cirujano
+                vive en arrecifes; en el acuario, necesitará una iluminación y temperatura estable..</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/17.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez Ángel Emperador</h5>
+              <p class="card-text">El ángel emperador es un pez para dueños experimentados. Son peces de menos de 30 cm
+                de largo que es bastante solitario y se adapta bien a la vida en acuario. ¡Bien cuidado, puede vivir
+                hasta 10 años!
+                Necesita un acuario bastante grande y una decoración variada de rocas y plantas entre la que poder
+                nadar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/18.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Gobios</h5>
+              <p class="card-text">Dentro de los gobios, hay más de 2.000 especies. Son unos pequeños peces de
+                aproximadamente 10 cm que viven en comunidad y son fáciles de mantener. Si no tienes experiencia, los
+                gobios son otra buena opción para ti.
+                Estos peces de agua salada se adaptan bien a los acuarios y a los cambios leves de temperatura y
+                entorno. Algunas especies de gobios son peces limpiadores, es decir, eliminan los parásitos de sus
+                compañeros. Otras, se vuelven peces simbióticos defensores de los crustáceos a cambio de poder cobijarse
+                y alimentarse a su costa..</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/19.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pez Perca enana magenta</h5>
+              <p class="card-text">Este pez de agua salada no necesita un espacio demasiado grande para vivir, aunque sí
+                necesita que la decoración del acuario le ofrezca oportunidades para esconderse y cobijarse. Puede ser
+                algo territorial con otros peces pequeños.
+                La perca enana magenta es un pez hermafrodita de un precioso color, ¡le da mucha vida a un acuario
+                doméstico! Pero debes informarte bien sobre sus necesidades antes de elegirla.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/20.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino Emperador</h5>
+              <p class="card-text">El pingüino emperador es el más grande de todos, con una estatura de hasta 120 cm y
+                45 kg de peso. Son habitantes endémicos de la Antártida y se les puede reconocer por el degradado
+                amarillo y naranja de su pecho y oídos. En invierno realizan un sobre esfuerzo abismal para procrear,
+                recorriendo grandes distancias a pie hasta llegar a las zonas de cría. Allí permanecerán en colonias de
+                muchísimos individuos que se juntan sin apenas espacio para mantener el calor; y que van rotando para
+                turnarse frente a las frías corrientes antárticas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/21.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino Rey</h5>
+              <p class="card-text">Este ave es muy parecida al emperador, aunque sus oídos son naranjas y delimitados,
+                la cabeza negra y el cuerpo es gris y blanco. Habitan en la Antártida, Islas Malvinas, Islas del
+                Príncipe Eduardo y Georgia del Sur. Un menor número de ellos se encuentran dispersos a lo largo de Nueva
+                Zelanda y Australia. Son, además, la especie de pingüino que puede sumergirse a más profundidad en busca
+                de su alimento favorito: el pez linterna.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/22.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüinos crestados.</h5>
+              <p class="card-text">Este género (Eudyptes) de pingüinos está formado por 7 especies, siendo los pingüinos
+                más abundantes, tanto en especies como en número de individuos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/23.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüinos saltarrocas austral y norteño</h5>
+              <p class="card-text">Estas dos especies son muy similares. El pingüino saltarrocas austral, o de penacho
+                amarillo, es el más pequeño de los pingüinos crestados, con 55 cm. Es blanco y negro con dos penachos de
+                plumas amarillas hacia atrás sobre los ojos. Es más común que su familiar norteño, que se encuentra en
+                peligro de extinción. Ambos se alimentan de Krill y pequeños crustáceos, calamares, peces y pulpos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/24.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüinos de Fiordland y de las Snares</h5>
+              <p class="card-text">Estas dos especie son muy similares físicamente a las anteriores. Habitan en Nueva
+                Zelanda. Tienen ojos rojos intensos, pico grueso y un penacho amarillo mucho más marcado que las otras
+                especies. Además, tienen un forma peculiar de caminar, inclinando la cabeza hacia adelante y
+                equilibrándose con las aletas. La diferencia entre ambas especies está en una zona rosada sin plumas que
+                poseen los pingüinos de las Snares.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/25.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino de Sclater</h5>
+              <p class="card-text">Estos pingüinos se reproducen en las islas Antípodas e islas Bounty (Nueva Zelanda) y
+                están en peligro de extinción. Lo que los diferencia de las otras especies de pingüinos crestados es el
+                color del iris. En lugar de rojo intenso es de color negro rojizo, y sus penachos amarillos permanecen
+                verticales dándoles un aspecto muy característico.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/26.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino azul</h5>
+              <p class="card-text">También llamados pingüinos del hada, miden unos 40 cm de altura. Tienen un plumaje
+                blanco y azulado, lo que les da su nombre. Su pico es oscuro y pequeño. Viven siempre en colonias y
+                salen a pescar en grupos para defenderse mejor de los posibles depredadores.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/27.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino azul de patas blancas</h5>
+              <p class="card-text">Esta especie se conoce también como enano de alas blancas. Mide 10 cm menos que su
+                hermano y pesa tan solo 1,5 kg, además de tener unas manchas blancas en las alas muy características.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/28.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino ojigualdo o de ojo amarillo</h5>
+              <p class="card-text">Es la única especie (Megadyptes antipodes) que queda viva de su género (Megadypes).
+                Son de un tamaño mediano, de unos 68 cm y alrededor de 8 kg de peso. La principal característica de esta
+                especie son sus ojos de color amarillo. Tienen en la cabeza un degradado de un tono amarillento y café a
+                negro. Construyen sus nidos en la vegetación densa, a diferencia de la mayoría de especies.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/29.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino papúa</h5>
+              <p class="card-text">Tienen la cabeza y el dorso de color negro, el vientre blanco y una banda blanca
+                sobre los ojos que se une en la parte superior de la cabeza. El pico es de color rojo con la parte
+                superior negra.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/30.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino barbijo</h5>
+              <p class="card-text">Tienen el vientre y la garganta blancos, el dorso negro y el pico de tono oscuro.
+                Poseen una linea negra que rodea la garganta muy característica de la especie.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/31.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino Adelaida</h5>
+              <p class="card-text">Tienen la cabeza y el dorso de color negro. El vientre de color blanco y un anillo
+                rodeando el ojo de color blanco. El pico es rojizo, manchado de blanco. Son muy parecidos al pingüino de
+                papúa pero sin la mancha blanca por encima de los ojos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/32.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino de El Cabo</h5>
+              <p class="card-text">Conocido también como pingüino africano o de anteojos, es la única especie que habita
+                en el continente africano. Tienen las manchas de la cara rosadas para disipar el calor, y franjas en
+                blanco y negro que recorren su vientre y cabeza. Son animales de climas cálidos y tropicales.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/33.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino de las Galápagos</h5>
+              <p class="card-text">Estos animales son endémicos de las islas Galápagos. Es la única especie que habita
+                por encima del ecuador. En tamaño, son los que van por detrás del pingüino azul. Presentan las mismas
+                franjas que las otras especies de la familia, pero más desdibujadas, predominando en la cabeza el color
+                negro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 540px; padding-left: 5%; padding-top: 5%;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="img/34.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Pingüino de Humnoldt</h5>
+              <p class="card-text">Son habitantes del océano Pacífico a lo largo de la costa de Perú y Chile. Estas aves
+                tienen el pico negro con una zona rosada y carnosa que se une alrededor del ojo. Presentan las franjas
+                de vientre y cabeza como sus hermanos de género.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <br>
+      <div class="card col-lg-4" id="productos">
+        <img src="img/producto01.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Comida para peces</h5>
+          <p class="card-text">
+            Este tipo de alimento tiende a flotar en la superficie hasta que se hidratan, y es entonces cuando se hunden
+            hasta el fondo.
+            Esta comida seca se vende de diferentes colores, según sea ricos en proteínas, o vegetales.
+            Si nuestros peces son pequeños, debemos de deshacer el alimento, si son mayores podremos echar las escamas
+            enteras.
+          </p>
+          <a href="#" class="btn btn-primary">Añadir al carrito</a>
+        </div>
+      </div>
+      <div class="card col-lg-4">
+        <img
+          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS6bif-hmZx8H9D6Fo4oPACUQqXDuZm7VUk-IU2DAsjCI65rrrGigwuaH1LaGzHCcYgnopuvcgOvsKau5kn04LTRdcVb8QBxg_hDxPR6oYrRCLVW_6qwtyy&usqp=CAE"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Pedras para precera</h5>
+          <p class="card-text">
+            Característica: 1. Multiusos, se puede utilizar en muchos lugares, acuarios, peceras, macetas, arena de
+            fondo de tanque
+            de tortuga, paisaje de arena de fondo de cangrejo ermitaño, material de filtro de tratamiento de agua , etc.
+            Piedra natural, grano uniforme, ricos fragmentos finos de concha en la arena para ayudar a estabilizar los
+            valores de PH y KH del sistema
+          </p>
+          <a href="#" class="btn btn-primary">Añadir al carrito</a>
+        </div>
+      </div>
+      <div class="card col-lg-4">
+        <img src="img/producto03.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Peceras</h5>
+          <p class="card-text">
+            Cambio de color de la burbuja afecta
+            Vista de 180 grados
+            filtración basada en cartuchos
+          </p>
+          <a href="#" class="btn btn-primary">Añadir al carrito</a>
+        </div>
+      </div>
+      <div class="card col-lg-4">
+        <img src="https://m.media-amazon.com/images/I/71r+AtJjs0S._AC_SL1500_.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bomba de aire para pecera</h5>
+          <p class="card-text">
+            La mejor bomba de fuente LED en Amazon: bomba de fuente LED de nuevo diseño, ideal para decorar tu fuente
+            interior, pequeñas características de agua, piscina pequeña, jardín, estanque, estatuas, peceras, acuarios.
+            Tan genial, la brillante mini fuente LED te ayudará a relajarte y disfrutar del maravilloso día y noche
+          </p>
+          <a href="#" class="btn btn-primary">Añadir al carrito</a>
+        </div>
+      </div>
+      <div class="card col-lg-4">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQayZufi_5BtI2jy6iMHYnAA-u7HyT5OULLcA&usqp=CAU"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">SUSCRIPCIÓN PES HUB</h5>
+          <p class="card-text">
+            Los peces mas mojados de la zona<br>Calidad premiun.
+          </p>
+          <a href="#" class="btn btn-primary">Añadir al carrito</a>
+        </div>
+      </div>
+      <div class="card col-lg-4">
+        <img src="https://images1.tiendanimal.es/g/castillo-para-acuario-estilo-medieval-mta-12070.jpg"
+          class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Castillo para peces</h5>
+          <p class="card-text">
+            Castillo de plastico para peces.
+          </p>
+          <a href="#" class="btn btn-primary">Añadir al carrito</a>
+        </div>
+      </div>
+      <div id="about" style="margin:5%;">
+        <div class="card">
+          <div class="card-body">
+            <h2>Sobre nosotros</h2>
+          </div>
+          <div class="card-body">
+            <h5>
+              Somos una empresa que estamos dedicados al servicio, comercialización y promoción de peces vivos de ornato
+              y
+              accesorios, próximamente contaremos con mantenimiento de ambientes para peces de agua salada y dulce. En
+              “Acuario Flipper” contamos con alianzas estratégicas con nuestros proveedores para lograr que los
+              productos y
+              servicios que proporcionamos sean de la mejor calidad para el bienestar de las especies consideradas
+              mascotas.
+            </h5>
+          </div>
+        </div>
+      </div>
+      <center>
+        <div id="contacto">
+          <h1>Contacto</h1>
+      </center>
+
+          <form class="row g-3" action="s_c.php" method="POST">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+            <div class="col-md-6">
+              <label for="apellido" class="form-label">Apellidos</label>
+              <input type="text" class="form-control" id="apellido" name="apellido">
+            </div>
+            <div class="col-md-6">
+              <label for="correo" class="form-label">Correo</label>
+              <input type="email" class="form-control" id="correo" name="correo">
+            </div>
+            <div class="col-md-4">
+              <label for="sexo" class="form-label">Sexo</label>
+              <select id="sexo" class="form-select" name="sexo">
+                <option value="Hombre">Hombre</option>
+                <option value="Mujer">Mujer</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <label for="poblacion" class="form-label">Población</label>
+              <select id="poblacion" class="form-select" name="poblacion">
+                <option value="Guadalajara">Guadalajara</option>
+                <option value="Zapopan">Zapopan</option>
+                <option value="Tonala">Tonala</option>
+                <option value="Tlajomulco">Tlajomulco</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <span class="input-group-text">Descripcion</span>
+              <input type="text" class="form-control" id="descripcion" name="descripcion">
+            </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Deseo recibir información y ofertas
+          </label>
+        </div>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+      </div>
+      </form>
+    </div>
+    <hr>
+    <div id="ubicacion" style="align-items: center; align-content: center;">
+      <h6>Julio De Jesus Delgado Avalos || 3321728536</h6>
+      <hr>
+      <h5>Ubicación</h5>
+      <iframe style="width: 300px; height: 300px;"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3733.212857547563!2d-103.19543818451983!3d20.66091740560837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b5e96e4bbd65%3A0x3116a98101842b0f!2sCETI%20Plantel%20Rio%20Santiago!5e0!3m2!1ses-419!2smx!4v1632607954746!5m2!1ses-419!2smx"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <footer class="footer">
+      <div class="contanier">
+        <center>
+          <p>Siguemos en nuestras redes sociales <a class="menu-link" href="#"><i class="icono2 fas fa-cat"></i></a></p>
+          <span class="fb"><i class="fab fa-facebook-square"></i>Facebook</span>
+        </center>
+      </div>
+    </footer>
+    <div class="scrollup">
+      <a href="index.html#" style="text-decoration: none; color: white;">
+        <i class="fa fa-angle-double-up" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+  </div>
+  <!-- <script src="../js/jquery-3.5.0.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</body>
+
+</html>
